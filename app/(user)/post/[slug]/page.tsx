@@ -38,14 +38,14 @@ async function Post({ params: { slug } }: Props) {
                       href="/post/architectural-engineering-wonders-of-the-modern-era-for-your-inspiration#"
                     >
                       <span className="inline-block mt-5 text-xs font-medium tracking-wider uppercase  text-blue-600">
-                        {category.title}
+                        {category?.title}
                       </span>
                     </Link>
                   ))}
             </div>
           </div>
           <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl">
-            {post.title}
+            {post?.title}
           </h1>
           <div className="flex justify-center mt-3 space-x-3 text-gray-500 ">
             <div className="flex items-center gap-3">
@@ -73,7 +73,7 @@ async function Post({ params: { slug } }: Props) {
       <div className="relative z-0 max-w-screen-lg mx-auto overflow-hidden lg:rounded-lg aspect-video">
         <Image
           src={urlFor(post.mainImage).url()}
-          alt={post.title}
+          alt={post?.title}
           layout="fill"
           loading="eager"
           objectFit="cover"
