@@ -1,6 +1,7 @@
 import BlogList from "../../components/BlogList";
 import { groq } from "next-sanity";
 import { client } from "../../lib/sanity.client";
+import Loading from "./loading";
 
 const query = groq`
   *[_type=="post"]{

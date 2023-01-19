@@ -32,7 +32,7 @@ async function Post({ params: { slug } }: Props) {
               {post?.categories?.length &&
                 post?.categories
                   ?.slice(0)
-                  .map((category: { title: String }, index: number) => (
+                  ?.map((category: { title: String }, index: number) => (
                     <Link
                       key={index}
                       href="/post/architectural-engineering-wonders-of-the-modern-era-for-your-inspiration#"
@@ -51,7 +51,7 @@ async function Post({ params: { slug } }: Props) {
             <div className="flex items-center gap-3">
               <div className="relative flex-shrink-0 w-10 h-10">
                 <Image
-                  src={urlFor(post.author.image).url()}
+                  src={urlFor(post?.author?.image)?.url()}
                   objectFit="cover"
                   alt={post?.author?.name}
                   layout="fill"
@@ -59,10 +59,11 @@ async function Post({ params: { slug } }: Props) {
                 />
               </div>
               <div>
-                <p className="text-gray-800">{post.author.name}</p>
+                <p className="text-gray-800">{post?.author?.name}</p>
                 <div className="flex items-center space-x-2 text-sm">
-                  <time className="text-gray-500" dateTime={post._updatedAt}>
-                    {format(parseISO(post._updatedAt), "MMMM dd, yyyy")}
+                  <time className="text-gray-500" dateTime={post?._updatedAt}>
+                    {post?._updatedAt &&
+                      format(parseISO(post?._updatedAt), "MMMM dd, yyyy")}
                   </time>
                 </div>
               </div>
@@ -72,7 +73,7 @@ async function Post({ params: { slug } }: Props) {
       </div>
       <div className="relative z-0 max-w-screen-lg mx-auto overflow-hidden lg:rounded-lg aspect-video">
         <Image
-          src={urlFor(post.mainImage).url()}
+          src={urlFor(post?.mainImage)?.url()}
           alt={post?.title}
           layout="fill"
           loading="eager"
@@ -82,7 +83,7 @@ async function Post({ params: { slug } }: Props) {
       <div className="container px-8 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg">
         <article className="max-w-screen-md mx-auto ">
           <div className="mx-auto my-3 prose prose-base prose-a:text-blue-500">
-            <PortableText value={post.body} />
+            <PortableText value={post?.body} />
           </div>
         </article>
         <div className="flex justify-center mt-7 mb-7">
@@ -97,7 +98,7 @@ async function Post({ params: { slug } }: Props) {
           <div className="flex flex-wrap items-start sm:space-x-6 sm:flex-nowrap">
             <div className="relative flex-shrink-0 w-24 h-24 mt-1 ">
               <Image
-                src={urlFor(post.author.image).url()}
+                src={urlFor(post?.author?.image)?.url()}
                 objectFit="cover"
                 alt={post?.author?.name}
                 layout="fill"
@@ -107,11 +108,11 @@ async function Post({ params: { slug } }: Props) {
             <div>
               <div className="mb-3">
                 <h4 className="text-lg font-medium text-gray-800 ">
-                  About {post.author.name}
+                  About {post?.author?.name}
                 </h4>
               </div>
               <div>
-                <PortableText value={post.author.bio} />
+                <PortableText value={post?.author?.bio} />
               </div>
             </div>
           </div>

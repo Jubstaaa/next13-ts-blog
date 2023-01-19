@@ -9,7 +9,7 @@ function SquareBlogList({ posts }: Props) {
   return (
     <div className="grid gap-10 mt-10 lg:gap-10 md:grid-cols-2 xl:grid-cols-3">
       {posts.slice(2).map((post: any) => (
-        <SinglePost post={post} />
+        <SinglePost key={post._id} post={post} />
       ))}
     </div>
   );
