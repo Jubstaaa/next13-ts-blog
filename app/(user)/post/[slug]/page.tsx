@@ -35,7 +35,7 @@ async function Post({ params: { slug } }: Props) {
                   ?.map((category: { title: String }, index: number) => (
                     <Link
                       key={index}
-                      href="/post/architectural-engineering-wonders-of-the-modern-era-for-your-inspiration#"
+                      href="#"
                     >
                       <span className="inline-block mt-5 text-xs font-medium tracking-wider uppercase  text-blue-600">
                         {category?.title}
