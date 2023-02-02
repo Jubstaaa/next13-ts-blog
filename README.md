@@ -1,7 +1,6 @@
-# Github Finder
+# Next13 Typescript Blog
 
 > Blog application developed with Nextjs version 13. Sanity.io was used for panel and backend operations
-
 
 > Click to view live demo
 > (next13-ts-blog.vercel.app)
